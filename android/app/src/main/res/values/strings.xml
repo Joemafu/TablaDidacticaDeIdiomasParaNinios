@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='utf-8'?>
 <resources>
     <string name="app_name">TablaDidacticaDeIdiomasParaNinios</string>
-    <string name="title_activity_main">TablaDidacticaDeIdiomasParaNinios</string>
-    <string name="package_name">tabla.didactica.de.idiomas</string>
-    <string name="custom_url_scheme">tabla.didactica.de.idiomas</string>
+    <string name="title_activity_main">Tabla Didáctica de Idiomas para Niños</string>
+    <string name="package_name">tabla.de.idiomas</string>
+    <string name="custom_url_scheme">tabla.de.idiomas</string>
 </resources>

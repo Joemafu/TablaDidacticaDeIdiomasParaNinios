@@ -1,10 +1,10 @@
 apply plugin: 'com.android.application'
 
 android {
-    namespace "tabla.didactica.de.idiomas"
+    namespace "tabla.de.idiomas"
     compileSdk rootProject.ext.compileSdkVersion
     defaultConfig {
-        applicationId "tabla.didactica.de.idiomas"
+        applicationId "tabla.de.idiomas"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1

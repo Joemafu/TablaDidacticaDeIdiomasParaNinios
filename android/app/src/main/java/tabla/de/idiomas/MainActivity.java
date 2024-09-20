@@ -1,4 +1,4 @@
-package tabla.didactica.de.idiomas;
+package tabla.de.idiomas;
 
 import com.getcapacitor.BridgeActivity;
 
