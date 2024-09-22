@@ -1,0 +1,38 @@
+.splash-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #ffffff;
+    background-color: #52DC36;
+    z-index: 1000;
+    animation: colorChange 5s ease-in-out infinite;
+  }
+  
+  .splash-content {
+    text-align: center;
+  }
+  
+  .splash-logo {
+    width: 80px;
+    height: 80px;
+    position: relative;
+    animation: float 3s ease-in-out infinite;
+    margin-bottom: 35px;
+    margin-top: 25px;
+  }
+
+  @keyframes colorChange {
+    0% { background-color: #52DC36; }
+    50% { background-color: #36A6DC; }
+    100% { background-color: #52DC36; }
+  }
+  
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-15px); }
+  }
