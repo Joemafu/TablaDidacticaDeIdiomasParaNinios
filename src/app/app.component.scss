@@ -8,7 +8,7 @@
     justify-content: center;
     align-items: center;
     color: #ffffff;
-    background-color: #52DC36;
+    background-color: #39225B;
     z-index: 1000;
     animation: colorChange 5s ease-in-out infinite;
   }
@@ -27,9 +27,8 @@
   }
 
   @keyframes colorChange {
-    0% { background-color: #52DC36; }
-    50% { background-color: #36A6DC; }
-    100% { background-color: #52DC36; }
+    0% { background-color: #39225B; }
+    100% { background-color: #A7EAA2; }
   }
   
   @keyframes float {
