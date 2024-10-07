@@ -1,40 +1,60 @@
 <ion-content [fullscreen]="true">
   <main class="container-fluid form-signin w-100 m-auto d-flex justify-content-center align-items-center full-height">
-    <div class="container-fluid d-flex justify-content-center align-items-center">
-      <form [formGroup]="loginForm" (ngSubmit)="login()" class="needs-validation" novalidate>
-        <header></header>
+    <div class="container">
+      <div class="screen">
+        <div class="screen__content">
+          <form [formGroup]="loginForm" (ngSubmit)="login()" class="login">
+            <div class="login__field">
+              <i class="login__icon fas fa-user"></i>
+              <input formControlName="mail" name="mail" type="email" class="login__input" id="floatingInput" placeholder="User name / Email" value="{{ mail }}" />
+              <div *ngIf="loginForm.get('mail')?.invalid && (loginForm.get('mail')?.dirty || loginForm.get('mail')?.touched)" class="alert alert-danger">
+                {{ loginForm.get('mail')?.hasError('required') ? 'Ingresá tu correo.' : 'Ingresá un correo válido.' }}
+              </div>
+            </div>
 
-        <h3 class="texto h3 mb-3 fw-normal m-auto">Ingresar credenciales</h3>
+            <div class="login__field">
+              <i class="login__icon fas fa-lock"></i>
+              <input formControlName="pass" name="pass" type="password" class="login__input" id="floatingPassword" placeholder="Password" value="{{ pass }}" />
+              <div *ngIf="loginForm.get('pass')?.invalid && (loginForm.get('pass')?.dirty || loginForm.get('pass')?.touched)" class="alert alert-danger">
+                {{ loginForm.get('pass')?.hasError('required') ? 'Ingresá tu contraseña.' : 'Mínimo 6 caracteres.' }}
+              </div>
+            </div>
 
-        <div *ngIf="alert !== ''" class="alert alert-danger">
-          {{ alert }}
-        </div>
+            <button class="button login__submit" type="submit">
+              <span class="button__text">Iniciar Sesión</span>
+              <i class="button__icon fas fa-chevron-right"></i>
+            </button>
+          </form>
 
-        <div class="form-floating">
-          <input formControlName="mail" name="mail" type="email" class="form-control" id="floatingInput" placeholder="name@example.com" value="{{ mail }}" (keyup.enter)="login()" />
-          <div *ngIf="loginForm.get('mail')?.invalid && (loginForm.get('mail')?.dirty || loginForm.get('mail')?.touched)" class="alert alert-danger">
-            {{ loginForm.get('mail')?.hasError('required') ? 'Ingresá tu correo.' : 'Ingresá un correo válido.' }}
+          <div class="d-flex justify-content-center align-items-center mt-4">
+            <div class="button login__submit" >
+              <span (click)="buttonDemoUno()" class="button__text">Admin</span>
+
+            </div>
+            <div  class="button login__submit" >
+              <span (click)="buttonDemoDos()" class="button__text">Tester</span>
+
+            </div>
+
+            <div class="button login__submit" >
+              <span (click)="buttonDemoTres()" class="button__text">Usuario</span>
+
+            </div>
+            <!-- <ion-button (click)="buttonDemoUno()">Admin</ion-button>
+            <ion-button (click)="buttonDemoDos()">Tester</ion-button>
+            <ion-button (click)="buttonDemoTres()">Usuario</ion-button> -->
           </div>
-          <label for="floatingInput">Correo</label>
         </div>
 
-        <div class="form-floating">
-          <input formControlName="pass" name="pass" type="password" class="form-control" id="floatingPassword" placeholder="Password" value="{{ pass }}" (keyup.enter)="login()" />
-          <div *ngIf="loginForm.get('pass')?.invalid && (loginForm.get('pass')?.dirty || loginForm.get('pass')?.touched)" class="alert alert-danger">
-            {{ loginForm.get('pass')?.hasError('required') ? 'Ingresá tu contraseña.' : 'Mínimo 6 caracteres.' }}
-          </div>
-          <label for="floatingPassword">Contraseña</label>
+        <div class="screen__background">
+          <span class="screen__background__shape screen__background__shape4"></span>
+          <span class="screen__background__shape screen__background__shape3"></span>
+          <span class="screen__background__shape screen__background__shape2"></span>
+          <span class="screen__background__shape screen__background__shape1"></span>
         </div>
-
-        <ion-button class="w-100 py-2 mb-3" type="submit">Iniciar sesión</ion-button>
-      </form>
+      </div>
     </div>
 
     
-    <div class="d-flex justify-content-center align-items-center">
-      <ion-button (click)="buttonDemoUno()">Admin</ion-button>
-      <ion-button (click)="buttonDemoDos()">Tester</ion-button>
-      <ion-button (click)="buttonDemoTres()">Usuario</ion-button>
-    </div>
   </main>
 </ion-content>
