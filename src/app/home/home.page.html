@@ -1,38 +1,52 @@
-<!-- <ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      
-    </ion-title>
-  </ion-toolbar>
-</ion-header> -->
+<ion-content>
+  <!-- Botón flotante para cerrar sesión -->
+   <div class="floating-buttons">
+     <ion-fab vertical="top" horizontal="center" slot="fixed">
+       <ion-fab-button (click)="logout()">
+         <ion-icon name="log-out-outline"></ion-icon>
+       </ion-fab-button>
+     </ion-fab>
+   </div>
+  <!-- Botones flotantes inferiores para idioma y temas -->
+  <div class="floating-buttons">
+    <ion-fab vertical="bottom" horizontal="start" slot="fixed">
+      <ion-fab-button>
+        <ion-icon name="flag-outline"></ion-icon>
+      </ion-fab-button>
+      <ion-fab-list side="top">
+        <ion-fab-button (click)="changeLanguage('es')"><img src="assets/img/es.png" /></ion-fab-button>
+        <ion-fab-button (click)="changeLanguage('en')"><img src="assets/img/en.png" /></ion-fab-button>
+        <ion-fab-button (click)="changeLanguage('pt')"><img src="assets/img/pt.png" /></ion-fab-button>
+      </ion-fab-list>
+    </ion-fab>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">
-
-      </ion-title>
-    </ion-toolbar>
-  </ion-header>
-
-  <ion-card class="secondary">
-    <ion-card-header>
-      <ion-card-subtitle>
-
-      </ion-card-subtitle>
-      <ion-card-title>
-
-      </ion-card-title>
-    </ion-card-header>
-    <ion-card-content class="container-fluid d-flex justify-content-center align-items-center full-width">
-
-      <img src="../../assets/img/logo.svg" alt="Sword" height="100px" > 
-
-    </ion-card-content>
-  </ion-card>
-  
-  <div class="container-fluid d-flex justify-content-center align-items-center full-width">
-
-    <ion-button (click)="logout()"><img src="../../assets/img/logout.svg" alt="" height="40px"></ion-button>
-  
+    <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+      <ion-fab-button>
+        <ion-icon name="color-palette-outline"></ion-icon>
+      </ion-fab-button>
+      <ion-fab-list side="top">
+        <ion-fab-button (click)="changeTheme('colores')"><ion-icon name="color-palette-sharp"></ion-icon></ion-fab-button>
+        <ion-fab-button (click)="changeTheme('numeros')">123</ion-fab-button>
+        <ion-fab-button (click)="changeTheme('animales')"><ion-icon name="paw-sharp"></ion-icon></ion-fab-button>
+      </ion-fab-list>
+    </ion-fab>
   </div>
+
+  <!-- Grid de botones principales con imágenes -->
+  <div class="button-grid">
+    <ion-grid>
+      <ion-row>
+        <ion-col><ion-button expand="block" class="large-btn" (click)="playSound(0)"><img [src]="images[0]" /></ion-button></ion-col>
+        <ion-col><ion-button expand="block" class="large-btn" (click)="playSound(1)"><img [src]="images[1]" /></ion-button></ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col><ion-button expand="block" class="large-btn" (click)="playSound(2)"><img [src]="images[2]" /></ion-button></ion-col>
+        <ion-col><ion-button expand="block" class="large-btn" (click)="playSound(3)"><img [src]="images[3]" /></ion-button></ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col><ion-button expand="block" class="large-btn" (click)="playSound(4)"><img [src]="images[4]" /></ion-button></ion-col>
+        <ion-col><ion-button expand="block" class="large-btn" (click)="playSound(5)"><img [src]="images[5]" /></ion-button></ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+</ion-content>
