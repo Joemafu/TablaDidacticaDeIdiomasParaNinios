@@ -1,5 +1,5 @@
 import { Component, inject } from '@angular/core';
-import { IonHeader, IonToolbar, IonTitle, IonContent, IonButton, IonCardSubtitle, IonCardHeader, IonCard, IonCardTitle, IonCardContent, IonFab, IonIcon, IonFabButton, IonFabList, IonGrid, IonRow, IonCol } from '@ionic/angular/standalone';
+import { IonContent, IonButton, IonFab, IonIcon, IonFabButton, IonFabList, IonGrid, IonRow, IonCol } from '@ionic/angular/standalone';
 import { AuthService } from '../services/auth.service';
 
 @Component({
@@ -7,21 +7,19 @@ import { AuthService } from '../services/auth.service';
   templateUrl: 'home.page.html',
   styleUrls: ['home.page.scss'],
   standalone: true,
-  imports: [IonCol, IonRow, IonGrid, IonFabList, IonFabButton, IonIcon, IonFab, IonButton, IonCardContent, IonCardSubtitle, IonCardTitle, IonCardHeader, IonCard, IonHeader, IonToolbar, IonTitle, IonContent],
+  imports: [IonCol, IonRow, IonGrid, IonFabList, IonFabButton, IonIcon, IonFab, IonButton, IonContent],
 })
 export class HomePage {
   
   authService: AuthService = inject(AuthService);
 
-  currentLanguage: 'es' | 'en' | 'pt' = 'es'; // Definir tipos explícitos
-  currentTheme: 'colores' | 'numeros' | 'animales' = 'colores'; // Definir tipos explícitos
+  currentLanguage: 'es' | 'en' | 'pt' = 'es'; 
+  currentTheme: 'colores' | 'numeros' | 'animales' = 'colores';
   sounds: any = {};
   images: any = {};
-  flagIcon: string = 'assets/img/es.png';  // Bandera por defecto
-  themeIcon: string = 'paw-sharp';  // Ícono de animales por defecto
+  flagIcon: string = 'assets/img/es.png'; 
+  themeIcon: string = 'paw-sharp'; 
 
-  
-  // Cargar sonidos de acuerdo al idioma y tema
   loadSounds() {
     const allSounds = {
       'es': {
@@ -44,7 +42,6 @@ export class HomePage {
     this.sounds = allSounds[this.currentLanguage][this.currentTheme];
   }
 
-  // Cargar las imágenes según el tema seleccionado
   loadImages() {
     const allImages = {
       'colores': ['assets/images/colores/rojo.svg', 'assets/images/colores/verde.svg', 'assets/images/colores/azul.svg', 'assets/images/colores/amarillo.svg', 'assets/images/colores/naranja.svg', 'assets/images/colores/violeta.svg'],
@@ -58,14 +55,14 @@ export class HomePage {
   constructor() {
     this.currentLanguage = 'es';
     this.currentTheme = 'animales';
-    this.loadSounds(); // Cargar sonidos iniciales
-    this.loadImages(); // Cargar imágenes iniciales
+    this.loadSounds(); 
+    this.loadImages(); 
   }
 
   changeLanguage(lang: 'es' | 'en' | 'pt') {
     this.currentLanguage = lang;
-    this.loadSounds(); // Recargar sonidos
-    this.flagIcon = this.getFlagIcon(lang); // Actualizar bandera
+    this.loadSounds(); 
+    this.flagIcon = this.getFlagIcon(lang); 
   }
 
   getFlagIcon(lang: 'es' | 'en' | 'pt'): string {
@@ -77,12 +74,11 @@ export class HomePage {
     return flags[lang];
   }
 
-  // Cambiar el tema y recargar sonidos e imágenes
   changeTheme(theme: 'colores' | 'numeros' | 'animales') {
     this.currentTheme = theme;
     this.loadSounds();
     this.loadImages();
-    this.themeIcon = this.getThemeIcon(theme); // Actualizar ícono del tema
+    this.themeIcon = this.getThemeIcon(theme);
   }
 
   getThemeIcon(theme: 'colores' | 'numeros' | 'animales'): string {
@@ -94,7 +90,6 @@ export class HomePage {
     return icons[theme];
   }
 
-  // Reproducir sonido basado en el botón presionado
   playSound(buttonIndex: number) {
     const sound = new Audio(this.sounds[buttonIndex]);
     sound.play();
