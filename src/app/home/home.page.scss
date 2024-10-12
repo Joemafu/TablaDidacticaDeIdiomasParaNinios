@@ -1,9 +1,5 @@
 @import '../components/login/login.page.scss';
 
-
-
-
-
 ion-content {
   --background: #F47B97;
 
@@ -49,15 +45,31 @@ ion-content {
   }
 }
 
-
 @media (orientation: landscape) {
   .button-grid ion-row {
-    height: 50%; // Ajusta el alto de los botones para modo horizontal
+    height: 50%; 
   }
 }
 
 .test {
   margin-right: 1vh;
+}
+
+@media (orientation: landscape) {
+  .button-grid ion-row {
+    height: 50%; // En modo landscape los botones ocupan la mitad del alto
+  }
+
+  ion-button.large-btn {
+    width: 100%;
+    height: 100%;
+    font-size: 18px; // Ajusta el tamaño de la fuente si es necesario
+  }
+
+  ion-button.large-btn img {
+    width: 80px;
+    height: 80px;
+  }
 }
 
 

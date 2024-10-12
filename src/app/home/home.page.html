@@ -11,7 +11,7 @@
   <div class="floating-buttons">
     <ion-fab vertical="bottom" horizontal="start" slot="fixed">
       <ion-fab-button>
-        <ion-icon name="flag-outline"></ion-icon>
+        <img [src]="flagIcon" />
       </ion-fab-button>
       <ion-fab-list side="top">
         <ion-fab-button (click)="changeLanguage('es')"><img src="assets/img/es.png" /></ion-fab-button>
@@ -22,8 +22,16 @@
 
     <ion-fab vertical="bottom" horizontal="end" slot="fixed">
       <ion-fab-button>
-        <ion-icon name="color-palette-outline"></ion-icon>
+        @if(themeIcon=="123")
+        {
+          123
+        }
+        @if(themeIcon!="123")
+        {
+          <ion-icon [name]="themeIcon"></ion-icon>
+        }
       </ion-fab-button>
+      
       <ion-fab-list side="top">
         <ion-fab-button (click)="changeTheme('colores')"><ion-icon name="color-palette-sharp"></ion-icon></ion-fab-button>
         <ion-fab-button (click)="changeTheme('numeros')">123</ion-fab-button>

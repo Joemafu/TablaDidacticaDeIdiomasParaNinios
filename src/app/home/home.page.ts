@@ -17,25 +17,27 @@ export class HomePage {
   currentTheme: 'colores' | 'numeros' | 'animales' = 'colores'; // Definir tipos explícitos
   sounds: any = {};
   images: any = {};
+  flagIcon: string = 'assets/img/es.png';  // Bandera por defecto
+  themeIcon: string = 'paw-sharp';  // Ícono de animales por defecto
 
   
   // Cargar sonidos de acuerdo al idioma y tema
   loadSounds() {
     const allSounds = {
       'es': {
-        'colores': ['assets/sounds/es/colores1.mp3', 'assets/sounds/es/colores2.mp3', 'assets/sounds/es/colores3.mp3', 'assets/sounds/es/colores4.mp3', 'assets/sounds/es/colores5.mp3', 'assets/sounds/es/colores6.mp3'],
-        'numeros': ['assets/sounds/es/numeros1.mp3', 'assets/sounds/es/numeros2.mp3', 'assets/sounds/es/numeros3.mp3', 'assets/sounds/es/numeros4.mp3', 'assets/sounds/es/numeros5.mp3', 'assets/sounds/es/numeros6.mp3'],
-        'animales': ['assets/sounds/es/animales1.mp3', 'assets/sounds/es/animales2.mp3', 'assets/sounds/es/animales3.mp3', 'assets/sounds/es/animales4.mp3', 'assets/sounds/es/animales5.mp3', 'assets/sounds/es/animales6.mp3']
+        'colores': ['assets/sounds/es/colores/e_rojo.ogg', 'assets/sounds/es/colores/e_verde.ogg', 'assets/sounds/es/colores/e_azul.ogg', 'assets/sounds/es/colores/e_amarillo.ogg', 'assets/sounds/es/colores/e_naranja.ogg', 'assets/sounds/es/colores/e_violeta.ogg'],
+        'numeros': ['assets/sounds/es/numeros/e_1.ogg', 'assets/sounds/es/numeros/e_2.ogg', 'assets/sounds/es/numeros/e_3.ogg', 'assets/sounds/es/numeros/e_4.ogg', 'assets/sounds/es/numeros/e_5.ogg', 'assets/sounds/es/numeros/e_6.ogg'],
+        'animales': ['assets/sounds/es/animales/e_gato.ogg', 'assets/sounds/es/animales/e_perro.ogg', 'assets/sounds/es/animales/e_mono.ogg', 'assets/sounds/es/animales/e_ardilla.ogg', 'assets/sounds/es/animales/e_caballo.ogg', 'assets/sounds/es/animales/e_vaca.ogg']
       },
       'en': {
-        'colores': ['assets/sounds/en/colores1.mp3', 'assets/sounds/en/colores2.mp3', 'assets/sounds/en/colores3.mp3', 'assets/sounds/en/colores4.mp3', 'assets/sounds/en/colores5.mp3', 'assets/sounds/en/colores6.mp3'],
-        'numeros': ['assets/sounds/en/numeros1.mp3', 'assets/sounds/en/numeros2.mp3', 'assets/sounds/en/numeros3.mp3', 'assets/sounds/en/numeros4.mp3', 'assets/sounds/en/numeros5.mp3', 'assets/sounds/en/numeros6.mp3'],
-        'animales': ['assets/sounds/en/animales1.mp3', 'assets/sounds/en/animales2.mp3', 'assets/sounds/en/animales3.mp3', 'assets/sounds/en/animales4.mp3', 'assets/sounds/en/animales5.mp3', 'assets/sounds/en/animales6.mp3']
+        'colores': ['assets/sounds/en/colores/i_rojo.ogg', 'assets/sounds/en/colores/i_verde.ogg', 'assets/sounds/en/colores/i_azul.ogg', 'assets/sounds/en/colores/i_amarillo.ogg', 'assets/sounds/en/colores/i_naranja.ogg', 'assets/sounds/en/colores/i_violeta.ogg'],
+        'numeros': ['assets/sounds/en/numeros/i_1.ogg', 'assets/sounds/en/numeros/i_2.ogg', 'assets/sounds/en/numeros/i_3.ogg', 'assets/sounds/en/numeros/i_4.ogg', 'assets/sounds/en/numeros/i_5.ogg', 'assets/sounds/en/numeros/i_6.ogg'],
+        'animales': ['assets/sounds/en/animales/i_gato.ogg', 'assets/sounds/en/animales/i_perro.ogg', 'assets/sounds/en/animales/i_mono.ogg', 'assets/sounds/en/animales/i_ardilla.ogg', 'assets/sounds/en/animales/i_caballo.ogg', 'assets/sounds/en/animales/i_vaca.ogg']
       },
       'pt': {
-        'colores': ['assets/sounds/pt/colores1.mp3', 'assets/sounds/pt/colores2.mp3', 'assets/sounds/pt/colores3.mp3', 'assets/sounds/pt/colores4.mp3', 'assets/sounds/pt/colores5.mp3', 'assets/sounds/pt/colores6.mp3'],
-        'numeros': ['assets/sounds/pt/numeros1.mp3', 'assets/sounds/pt/numeros2.mp3', 'assets/sounds/pt/numeros3.mp3', 'assets/sounds/pt/numeros4.mp3', 'assets/sounds/pt/numeros5.mp3', 'assets/sounds/pt/numeros6.mp3'],
-        'animales': ['assets/sounds/pt/animales1.mp3', 'assets/sounds/pt/animales2.mp3', 'assets/sounds/pt/animales3.mp3', 'assets/sounds/pt/animales4.mp3', 'assets/sounds/pt/animales5.mp3', 'assets/sounds/pt/animales6.mp3']
+        'colores': ['assets/sounds/pt/colores/p_rojo.ogg', 'assets/sounds/pt/colores/p_verde.ogg', 'assets/sounds/pt/colores/p_azul.ogg', 'assets/sounds/pt/colores/p_amarillo.ogg', 'assets/sounds/pt/colores/p_naranja.ogg', 'assets/sounds/pt/colores/p_violeta.ogg'],
+        'numeros': ['assets/sounds/pt/numeros/p_1.ogg', 'assets/sounds/pt/numeros/p_2.ogg', 'assets/sounds/pt/numeros/p_3.ogg', 'assets/sounds/pt/numeros/p_4.ogg', 'assets/sounds/pt/numeros/p_5.ogg', 'assets/sounds/pt/numeros/p_6.ogg'],
+        'animales': ['assets/sounds/pt/animales/p_gato.ogg', 'assets/sounds/pt/animales/p_perro.ogg', 'assets/sounds/pt/animales/p_mono.ogg', 'assets/sounds/pt/animales/p_ardilla.ogg', 'assets/sounds/pt/animales/p_caballo.ogg', 'assets/sounds/pt/animales/p_vaca.ogg']
       }
     };
 
@@ -54,22 +56,42 @@ export class HomePage {
   }
 
   constructor() {
-    this.loadSounds();
+    this.currentLanguage = 'es';
+    this.currentTheme = 'animales';
+    this.loadSounds(); // Cargar sonidos iniciales
+    this.loadImages(); // Cargar imágenes iniciales
   }
 
-  // Cambiar el idioma y recargar sonidos
   changeLanguage(lang: 'es' | 'en' | 'pt') {
     this.currentLanguage = lang;
-    this.loadSounds(); // Actualiza los sonidos según el idioma
-    console.log('Idioma cambiado a:', lang);
+    this.loadSounds(); // Recargar sonidos
+    this.flagIcon = this.getFlagIcon(lang); // Actualizar bandera
+  }
+
+  getFlagIcon(lang: 'es' | 'en' | 'pt'): string {
+    const flags = {
+      'es': 'assets/img/es.png',
+      'en': 'assets/img/en.png',
+      'pt': 'assets/img/pt.png'
+    };
+    return flags[lang];
   }
 
   // Cambiar el tema y recargar sonidos e imágenes
   changeTheme(theme: 'colores' | 'numeros' | 'animales') {
     this.currentTheme = theme;
-    this.loadSounds(); // Recargar los sonidos del nuevo tema
-    this.loadImages(); // Recargar las imágenes del nuevo tema
-    console.log('Tema cambiado a:', theme);
+    this.loadSounds();
+    this.loadImages();
+    this.themeIcon = this.getThemeIcon(theme); // Actualizar ícono del tema
+  }
+
+  getThemeIcon(theme: 'colores' | 'numeros' | 'animales'): string {
+    const icons = {
+      'colores': 'color-palette-sharp',
+      'numeros': '123',
+      'animales': 'paw-sharp'
+    };
+    return icons[theme];
   }
 
   // Reproducir sonido basado en el botón presionado
@@ -82,3 +104,4 @@ export class HomePage {
     this.authService.logout();
   }
 }
+
