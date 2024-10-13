@@ -1,4 +1,4 @@
-@import '../components/login/login.page.scss';
+@import '../login/login.page.scss';
 
 ion-content {
   --background: #F47B97;
@@ -39,6 +39,7 @@ ion-content {
       height: 100%;
       font-size: 24px;
       background-color: #840B27;
+      border-radius: 5px;
     }
 
 

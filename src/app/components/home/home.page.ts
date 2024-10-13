@@ -1,6 +1,6 @@
 import { Component, inject } from '@angular/core';
 import { IonContent, IonButton, IonFab, IonIcon, IonFabButton, IonFabList, IonGrid, IonRow, IonCol } from '@ionic/angular/standalone';
-import { AuthService } from '../services/auth.service';
+import { AuthService } from '../../services/auth.service';
 
 @Component({
   selector: 'app-home',
