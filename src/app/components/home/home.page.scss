@@ -84,10 +84,10 @@ ion-content {
       margin-top: 1vh;
       height: 8vh;
       width: 8vh;  
-      font-size: 35px;
+      font-size: 4vh;
 
       ion-icon {
-        font-size: 35px;
+        font-size: 6vh;
       }
 
     }
@@ -108,34 +108,85 @@ ion-content {
       height: 33.33%;
 
       img {
-        height: 30vh;
-        width: auto;
+        width: 15vh;
+        height: auto;
       }
     }
 
     ion-button.large-btn {
       width: 100%;
       height: 100%;
-      font-size: 24px;
       background-color: #840B27;
       border-radius: 5px;
     }
   }
 }
 
+
+
+
+
+
+
 @media (orientation: landscape) {
-  .button-grid ion-row {
-    height: 50%;
-  }
 
-  ion-button.large-btn {
-    width: 100%;
-    height: 100%;
-    font-size: 18px; 
-  }
+  ion-content {
+    --background: #F47B97;
 
-  ion-button.large-btn img {
-    width: 30vh;
-    height: auto;
+    .floating-buttons {
+      
+      //botones que se despliegan
+      ion-fab-list {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+/*         height: 6vh;
+        width: 6vw;  
+        font-size: 35px; */
+      }
+
+      //fab contenedor
+      ion-fab-button {
+        --background: #ED2553;
+        margin-left: 1vh;
+        margin-bottom: 1vh;
+        margin-right: 1vh;
+        margin-top: 1vh;
+        height: 8vw;
+        width: 8vw;  
+        font-size: 4vw;
+        
+        ion-icon {
+          font-size: 6vw;
+        }
+      }
+
+      img {
+        width: 6vw;
+        height: 6vw;
+      }
+    }
+
+    .button-grid {
+      height: 100%;
+      ion-grid {
+        height: 100%;
+      }
+      ion-row {
+        height: 33.33%;
+
+        img{
+          height: 15vh;
+          width: auto;
+        }
+      }
+
+      ion-button.large-btn {
+        width: 100%;
+        height: 100%;
+        background-color: #840B27;
+        border-radius: 5px;
+      }
+    }   
   }
 }

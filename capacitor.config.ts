@@ -1,6 +1,9 @@
 import type { CapacitorConfig } from '@capacitor/cli';
 
 const config: CapacitorConfig = {
+  android:{
+    allowMixedContent: true,
+  },
   appId: 'tabla.de.idiomas',
   appName: 'TablaDidacticaDeIdiomasParaNinios',
   webDir: 'www',
