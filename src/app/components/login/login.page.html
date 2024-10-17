@@ -1,15 +1,14 @@
-<div class="materialContainer d-flex flex-column justify-content-center align-items-center">
+<div class="materialContainer">
 
-  <div class="box d-flex flex-column justify-content-center align-items-center">
+  <div class="box columna superior">
     <img class="logo" src="./../../../assets/img/logo.svg" alt="" height="60px" >
-    
     <div class="subtitle">Tabla didáctica de idiomas</div>
     <span class="amarillo"> Agradecimientos: </span>
-    <span class="starring"> <i class="fa fa-star amarillo"></i> Haley Seifert <img src="../../../assets/img/en.png" alt="" height="75%"></span>
-    <span class="starring"> <i class="fa fa-star amarillo"></i> Nathalia Pinheiro  <img src="../../../assets/img/pt.png" alt="" height="75%"> </span>
+    <span class="starring"> <i class="fa fa-star amarillo"></i> Haley Seifert <img src="../../../assets/img/en.png" alt=""></span>
+    <span class="starring"> <i class="fa fa-star amarillo"></i> Nathalia Pinheiro  <img src="../../../assets/img/pt.png" alt=""> </span>
   </div>
 
-  <div class="box d-flex flex-column justify-content-center align-items-center">
+  <div class="box columna inferior">
     <div class="title">BIENVENIDO</div>
 
     <form [formGroup]="loginForm" (ngSubmit)="login()" class="needs-validation" novalidate>
@@ -43,7 +42,7 @@
       </div>
     </form>
 
-    <div class="d-flex justify-content-center align-items-center">
+    <div class="">
       <div class="button">
         <ion-button class="margen" (click)="buttonDemoUno()">Admin</ion-button>
         <ion-button (click)="buttonDemoDos()">Pruebas</ion-button>
